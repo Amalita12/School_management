@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>presence</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+
+</head>
+
+<body>
+
+    <header class=" fixed flex w-screen justify-between items-centre  text-white gap-2  bg-[#183862] z-40">
+        <img class="h-12 pl-5 " src="Pictures/Logo (2).png" alt="">
+        <div class="flex p-2 pt-3 pr-8 text-white gap-2  ">
+            <img class="size-5 invert brightness-0" src="Pictures/Profil.png" alt="">
+            <p class="">mouad</p>
+    </header>
+    </div>
+    <aside class="fixed flex flex-col justify-between mt-10 pb-10 min-h-screen w-48 bg-[#183862] z-30 ">
+        <div class=" flex flex-col py-5 text-white border=0 w-full p-6 gap-6  ">
+            <img src="">
+            <a href="dashboard.html" class="flex gap-2 rounded-md  items-centre px-3 py-1.5  bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Home.png">
+                <p>Dashboard</p>
+            </a>
+            <a href="student.html"
+                class="flex rounded-md  gap-2 w-12 items-centre px-3 py-1.5 min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5  invert brightness-0" src="Pictures/Students.png">
+                <p>Etudiant</p>
+            </a>
+            <a href="presence.html" ev
+                class="flex rounded-md gap-2 w-12 items-centre px-3 py-1.5  min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Absence.png">
+                <p>Presence</p>
+            </a>
+            <a href="#"
+                class="flex rounded-md  gap-2 w-12 items-centre px-3 py-1.5 min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/History.png">
+                <p>Historique</p>
+            </a>
+        </div>
+        <div class=" p-6 ">
+            <a href="#" class="flex gap-2 rounded-md  hover:bg-sky-800 p-2 ">
+                <img class="size-5 invert brightness-0" src="Pictures/logout.png" alt="">
+                <p class="text-red-500">Deconnexion</p>
+            </a>
+        </div>
+    </aside>
+
+
+    <div class="bg-white p-15 ml-40">
+        <div class="bg-sky-800 p-3 rounded-lg ">
+            <div class="flex md:flex-row justify-between">
+                <h1 class="text-white font-bold text-2xl px-2">Prise de presence Quotidienne</h1>
+                <div class="bg-black rounded-md text-white px-2 py-1 flex items-center gap-2">
+                    <img class="w-[20px]" src="search.png" alt="">
+                    <input type="text" placeholder="search" spellcheck="false">
+                </div>
+            </div>
+            <button id="save-btn" class=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 mb-3 rounded text-white my-8"><i
+                    class="fa-regular fa-floppy-disk"></i> Enregistrer la presence</button>
+            <hr class="text-white font-3xl">
+            <h2 class="text-white py-3 font-bold my-2 text-xl ">Selectioner la date</h2>
+            <div class="relative max-w-sm">
+                <input id="date" type="date" class=" bg-white invert border border-gray-600 rounded-md placeholder-gray-500 p-2 focus:ring-2 focus:ring-white focus:border-white dark:bg-white dark:text-black dark:border-gray-300 dark:placeholder-gray-500 w-80">
+            </div>
+            <div class=" flex flex-col gap-2 mt-3" id="infodisply">
+
+
+            </div>
+
+
+<div id="retard-info" class="bg-sky-950 p-3 rounded-lg my-2 text-white" style="display:none;">
+    <h3 class="text-yellow-400 text-xm font-bold mb-7">Informations du retard</h3>
+    <div class="flex flex-row justify-between">
+        <div>
+            <h3>Heure d'arrivée</h3>
+            <input id="heure-arrivee" class="bg-black rounded-md text-white font-bold w-90 px-2 py-2 flex gap-2"
+                type="time" >
+        </div>
+        <div>
+            <h3>Motif du retard</h3>
+            <input id="motif-retard" class="bg-black rounded-md text-white font-bold w-100 px-2 py-2 flex gap-2 mb-10"
+                type="text" placeholder="motif" spellcheck="false">
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
