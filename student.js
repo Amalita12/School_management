@@ -191,6 +191,7 @@ function deleteStudent(id) {
   students = students.filter(s => s.id !== id);
   saveToLocalStorage();
   renderStudents();
+
 }
 
 
