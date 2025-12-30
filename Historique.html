@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="Test.js" defer></script>
+
+
+</head>
+<body>
+    <header  class=" fixed flex w-screen justify-between items-center  text-white gap-2  bg-[#183862] z-40">
+        <img class="h-12 pl-5 " src="Pictures/Logo (2).png" alt="">
+        <div class="flex p-2 pt-3 pr-8 text-white gap-2  ">
+            <img class="size-5 invert brightness-0" src="Pictures/Profil.png" alt="">
+            <p id="admin" class="">Rachid</p>
+        </div>    
+    </header>
+    <aside class="fixed flex flex-col justify-between mt-10 pb-10 min-h-screen w-48 bg-[#183862] z-30 ">
+        <div class=" flex flex-col py-5 text-white border=0 w-full p-6 gap-6  " >
+            <img src="">
+            <a href="#" class="flex gap-2 rounded-md  px-3 py-1.5  bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Home.png">
+                <p>Dashboard</p>
+            </a>
+            <a href="#" class="flex rounded-md  gap-2 w-12 items-center px-3 py-1.5 min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5  invert brightness-0" src="Pictures/Students.png">
+                <p>Etudiant</p>
+            </a>
+            <a href="#" class="flex rounded-md gap-2 w-12 items-center px-3 py-1.5  min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Absence.png">
+                <p>Presence</p>
+            </a>
+            <a href="#" class="flex rounded-md  gap-2 w-12 items-center px-3 py-1.5 min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/History.png">
+                <p>Historique</p>
+            </a>
+        </div>
+        <div class=" p-6 ">
+            <a href="#" class="flex gap-2 rounded-md  hover:bg-sky-800 p-2 ">
+                <img class="size-5 invert brightness-0" src="Pictures/logout.png" alt="">
+                <p class="text-red-500">Deconnexion</p>
+            </a>
+        </div>
+    </aside>
+
+    <main class="ml-48 pt-20 p-6 space-y-6 bg-slate-200 min-h-screen">
+        <div class="bg-sky-800 p-6  rounded-lg">
+                <div class="flex justify-between mb-6 ">
+                    <p class="font-bold text-lg">Historique des Absences et Retards</p>
+                    <input id="input" class="h-8 p-2 rounded-md" type="date" placeholder="Rechercher...">
+                </div>
+                <div id="joursContainer" class="max-h-96 overflow-y-auto" >
+                <div class="jour  pb-2 pl-5 rounded-lg my-1 bg-black" data-date="2025-12-17"> 
+                    <div class="flex gap-6 p-2 px-5  text-white" >
+                        <img class="size-6 invert mt-2" src="Pictures/Absence.png" alt="">
+                        <div>
+                        <p class="date  text-xs" >Mercredi 17 December 2025</p>
+                        <p class="detail  text-xs text-gray-400 pt-1" ><span class="bnrAbsent">2</span> absent · <span class="bnrRetard">3</span> retards · <span class="nbrPresent">43</span> présents</p>
+                        </div>
+                    </div>
+                    <button class="btnDetails  bg-purple-600 text-xs ml-20 px-8 text-white hover:bg-purple-700  py-1 rounded-lg text-xs">
+                        Voir détails
+                    </button> 
+                </div>
+                <div class="jour  pb-2 pl-5 rounded-lg my-1 bg-black " data-date="2025-12-16"> 
+                    <div class="flex gap-6 p-2 px-5 text-white" >
+                        <img class="size-6 invert mt-2" src="Pictures/Absence.png" alt="">
+                        <div>
+                        <p class="date  text-xs" >Mardi 16 December 2025</p>
+                        <p class="detail  text-xs text-gray-400 pt-1" ><span class="bnrAbsent">0</span> absent · <span class="bnrRetard">3</span> retards · <span class="nbrPresent">45</span> présents</p>
+                        </div>
+                    </div>
+                    <button class="btnDetails   bg-purple-600 text-xs ml-20 px-8 text-white hover:bg-purple-700  py-1 rounded-lg text-xs">
+                        Voir détails
+                    </button> 
+                </div>
+                <div class="jour  pb-2 pl-5 rounded-lg bg-black" data-date="2025-12-15" > 
+                    <div class="flex gap-6 p-2 px-5 text-white" >
+                        <img class="size-6 invert mt-2" src="Pictures/Absence.png" alt="">
+                        <div>
+                        <p  class="date  text-xs" >Lundi 15 December 2025</p>
+                        <p  class="detail  text-xs text-gray-400 pt-1" > <span class="bnrAbsent">1</span> absent · <span class="bnrRetard">2</span> retards · <span class="nbrPresent">45</span> présents</p>
+                        </div>
+                    </div>
+                    <button class="btnDetails   bg-purple-600 text-xs ml-20 px-8 text-white hover:bg-purple-700  py-1 rounded-lg text-xs">
+                        Voir détails
+                    </button> 
+                </div>
+                </div>
+        </div>
+        <div class="bg-sky-800 p-6  rounded-lg">
+                <div class="flex justify-between mb-6 ">
+                    <p id="detailDate" class="font-bold text-lg">Details - Mercredi 17 Decembre 2025</p>
+                </div>
+                <p class="text-red-600 mb-2  font-bold" >Les Absents</p>
+                <div class="flex flex-col gap-2" >
+                <div class="flex justify-between items-center pr-2 pl-5 rounded-lg bg-black" > 
+                    <div class="flex items-center gap-6 p-2 px-5 text-white" >
+                        <div  class="syno  bg-orange-400 p-2 h-10 rounded-lg" >RH</div>
+                        <div>
+                        <p  class="nom  text-xs" >Rihane Harchi</p>
+                        <p  class=" text-xs text-gray-400 pt-1" >Group <span class="group">4</span> · ID : <span class="etudiantId">0001</span></p>
+                        </div>
+                    </div>
+                    <button class="bg-red-700 border-red-950 text-xs ml-20 px-8 text-white   py-1 rounded-lg text-xs">
+                        Absent </button> 
+                </div>
+                <p class="text-orange-400 mb-2 font-bold" >Retards</p>
+                <div class="flex justify-between items-center  pl-5 pr-2 rounded-lg bg-black" > 
+                    <div class="flex items-center gap-6 p-2 px-5 text-white" >
+                        <div  class="syno  bg-green-400 p-2 h-10 rounded-lg" >AH</div>
+                        <div>
+                        <p  class="nom  text-xs" >Ahmed Harchi</p>
+                        <p class=" text-xs text-gray-400 pt-1" >Group <span class="group">2</span> · ID : <span class="etudiantId">0003</span> </p>
+                        </div>
+                    </div>
+                    <button class="bg-orange-400 text-xs ml-20 px-8 text-white  py-1 rounded-lg text-xs">
+                       <span class="duree">30</span> min retard
+                    </button> 
+                </div>
+                <div class="flex justify-between items-center pr-2 pl-5 rounded-lg bg-black" > 
+                    <div class="flex items-center gap-6 p-2 px-5 text-white" >
+                        <div  class="syno   bg-yellow-400 p-2 h-10 rounded-lg" >YH</div>
+                        <div>
+                        <p  class="nom text-xs" >Yassine Harchi</p>
+                        <p  class=" text-xs text-gray-400 pt-1" >Group <span class="group">5</span> · ID : <span class="etudiantId">0002</span></p>
+                        </div>
+                    </div>
+                    <button class="bg-orange-400 text-xs ml-20 px-8 text-white   py-1 rounded-lg text-xs">
+                        <span class="duree">15</span> min retard
+                    </button> 
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
