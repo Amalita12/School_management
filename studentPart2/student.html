@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Manager - Enaa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .text-active { color: #4ade80; }
+        .bg-active { background-color: rgba(74, 222, 128, 0.2); }
+    </style>
+</head>
+<body class="bg-[#f5f2f2] min-h-screen text-white">
+
+    <header class="fixed flex w-screen justify-between items-center text-white gap-2 bg-[#183862] z-50 h-12">
+        <img class="h-10 pl-5" src="Pictures/Logo (2).png" alt="">
+        <div class="flex p-2 pt-3 pr-8 text-white gap-2">
+            <img class="size-5 invert brightness-0" src="Pictures/Profil.png" alt="">
+            <p>Rachid</p>
+        </div>
+    </header>
+
+    <aside class="fixed flex flex-col justify-between mt-12 pb-10 min-h-screen w-48 bg-[#183862] z-40">
+        <div class="flex flex-col py-5 text-white w-full p-6 gap-6">
+            <a href="./dashboard.html" class="flex gap-2 rounded-md items-center px-3 py-1.5 hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Home.png">
+                <p>Dashboard</p>
+            </a>
+            <a href="#" class="flex rounded-md gap-2 items-center px-3 py-1.5 bg-sky-900 border-l-4 border-white">
+                <img class="size-5 invert brightness-0" src="Pictures/Students.png">
+                <p>Etudiant</p>
+            </a>
+            <a href="./presence.html" class="flex rounded-md gap-2 items-center px-3 py-1.5 hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Absence.png">
+                <p>Presence</p>
+            </a>
+            <a href="./Historique.html" class="flex rounded-md gap-2 items-center px-3 py-1.5 hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/History.png">
+                <p>Historique</p>
+            </a>
+        </div>
+        <div class="p-6">
+            <a href="#" class="flex gap-2 rounded-md hover:bg-sky-800 p-2">
+                <img class="size-5 invert brightness-0" src="Pictures/logout.png" alt="">
+                <p class="text-red-500 font-bold">Deconnexion</p>
+            </a>
+        </div>
+    </aside>
+
+    <main class="ml-48 pt-20 p-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl text-black font-bold mb-10 text-white">Gestion des Étudiants</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                <div class="bg-[#101e38] p-8 rounded-3xl shadow-2xl flex justify-between items-center border border-slate-700">
+                    <div>
+                        <p class="text-slate-300 font-semibold mb-2">Total Étudiants</p>
+                        <h3 class="text-5xl font-bold" id="Count">0</h3>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl text-green-400"><i class="fas fa-users text-3xl"></i></div>
+                </div>
+                <div class="bg-[#101e38] p-8 rounded-3xl shadow-2xl flex justify-between items-center border border-slate-700">
+                    <div>
+                        <p class="text-slate-300 font-semibold mb-2">Étudiants Actifs</p>
+                        <h3 class="text-5xl font-bold" id="activeCount">0</h3>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl text-blue-400"><i class="fas fa-user-check text-3xl"></i></div>
+                </div>
+                <div class="bg-[#101e38] p-8 rounded-3xl shadow-2xl flex justify-between items-center border border-slate-700">
+                    <div>
+                        <p class="text-slate-300 font-semibold mb-2">Étudiants Inactifs</p>
+                        <h3 class="text-5xl font-bold" id="inactiveCount">0</h3>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl text-red-400"><i class="fas fa-user-times text-3xl"></i></div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mb-8">
+                <div class="relative w-1/3">
+                    <span class="absolute inset-y-0 left-3 flex items-center text-slate-400">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Rechercher..." class="w-full pl-10 pr-4 py-3 bg-[#0a192f] border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button onclick="openModal()" class="bg-[#0a192f] hover:bg-[#183862] text-white px-8 py-3 rounded-xl font-bold border border-slate-700 flex items-center gap-2 transition-all">
+                    <span class="text-xl">+</span> Ajouter un étudiant
+                </button>
+            </div>
+
+            <div class="bg-[#101e38] rounded-3xl shadow-2xl overflow-hidden border border-slate-800">
+                <table class="w-full text-left">
+                    <thead class="bg-[#f5f2f2] text-slate-400 text-sm uppercase">
+                        <tr>
+                            <th class="px-8 text-black py-5">Étudiant</th>
+                            <th class="px-8 text-black py-5">Email</th>
+                            <th class="px-8 text-black py-5">Groupe</th>
+                            <th class="px-8 text-black py-5">Statut</th>
+                            <th class="px-8 text-black py-5 text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody" class="divide-y divide-slate-800">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+<!--- Modal --->
+
+    <div id="studentModal" class="fixed inset-0 bg-black/70 hidden backdrop-blur-sm flex items-center justify-center z-[100]">
+        <div class="bg-[#101e38] p-8 rounded-3xl w-full max-w-md border border-slate-700 shadow-2xl">
+            <h3 id="modalTitle" class="text-2xl font-bold mb-6 text-white text-center">Ajouter un étudiant</h3>
+            <form id="studentForm" class="space-y-4">
+                <input type="hidden" id="studentId">
+                <div>
+                    <label class="block  text-xs text-slate-400 mb-1 ml-1 uppercase font-bold tracking-wider">Nom Complet</label>
+                    <input type="text" id="studentName" required class="w-full p-3 bg-[#f5f2f2] border border-slate-700 rounded-xl text-black outline-none focus:border-blue-500 transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-400 mb-1 ml-1 uppercase font-bold tracking-wider">Email Professionnel</label>
+                    <input type="email" id="studentEmail" required class="w-full p-3 bg-[#f5f2f2] border border-slate-700 rounded-xl text-black outline-none focus:border-blue-500 transition-all">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block  text-xs text-slate-400 mb-1 ml-1 uppercase font-bold tracking-wider">Groupe</label>
+                        <select id="studentGroup" class="w-full p-3 bg-[#f5f2f2] border border-slate-700 rounded-xl text-black outline-none appearance-none cursor-pointer">
+                            <option value="Group 1">Groupe 1</option>
+                            <option value="Group 2">Groupe 2</option>
+                            <option value="Group 3">Groupe 3</option>
+                            <option value="Group 4">Groupe 4</option>
+                            <option value="Group 5">Groupe 5</option>
+                            <option value="Group 6">Groupe 6</option>
+                            <option value="Group 7">Groupe 7</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1 ml-1 uppercase font-bold tracking-wider">Statut</label>
+                        <select id="studentStatus" class="w-full p-3 bg-[#f5f2f2] border border-slate-700 rounded-xl text-black outline-none appearance-none cursor-pointer">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex gap-4 pt-6">
+                    <button type="button" onclick="closeModal()" class="flex-1 py-3 text-slate-400 font-semibold hover:text-white transition-colors">
+                        Annuler
+                    </button>
+                    <button type="submit" class="flex-1 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all">
+                        Enregistrer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="student.js"></script>
+</body>
+</html>
