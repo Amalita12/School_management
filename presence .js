@@ -3,6 +3,7 @@ let currentStudentIndex = null;
 let dataset = {};
 let students = [];
 
+
 document.addEventListener("DOMContentLoaded", function () {
   init();
   studentHTML();
