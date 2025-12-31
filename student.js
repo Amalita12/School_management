@@ -3,6 +3,7 @@
 
 let students = [];
 let nextId = 1;
+
 // LOCAL STORAGE
 
 function saveToLocalStorage() {
