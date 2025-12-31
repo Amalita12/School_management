@@ -19,44 +19,35 @@
             <p id="user">mouad</p>
     </header>
     </div>
- <aside id="sidebar"
-        class="fixed top-14 left-0 w-56 h-[calc(100%-3.5rem)] bg-[#183862] text-white
-               transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-40">
-
-        <nav class="flex flex-col justify-between h-full">
-
-            <div class="flex flex-col gap-3 p-4">
-
-                <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-sky-800">
-                    <img class="size-5 invert brightness-0" src="Pictures/Home.png">
-                    Dashboard
-                </a>
-
-                <a href="student.html" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-sky-800">
-                    <img class="size-5 invert brightness-0" src="Pictures/Students.png">
-                    Etudiant
-                </a>
-
-                <a href="presence.html" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-sky-800">
-                    <img class="size-5 invert brightness-0" src="Pictures/Absence.png">
-                    Presence
-                </a>
-
-                <a href="history.html" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-sky-800">
-                    <img class="size-5 invert brightness-0" src="Pictures/History.png">
-                    Historique
-                </a>
-
-            </div>
-
-            <div class="p-4">
-                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-sky-800">
-                    <img class="size-5 invert brightness-0" src="Pictures/logout.png">
-                   <button id="dex" class="hover:cursor-pointer"> <span class="text-red-400">Deconnexion</span></button>
-                </a>
-            </div>
-
-        </nav>
+    <aside class="fixed flex flex-col justify-between mt-10 pb-10 min-h-screen w-48 bg-[#183862] z-30 ">
+        <div class=" flex flex-col py-5 text-white border=0 w-full p-6 gap-6  ">
+            <img src="">
+            <a href="dashboard.html" class="flex gap-2 rounded-md  items-centre px-3 py-1.5  bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Home.png">
+                <p>Dashboard</p>
+            </a>
+            <a href="student.html"
+                class="flex rounded-md  gap-2 w-12 items-centre px-3 py-1.5 min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5  invert brightness-0" src="Pictures/Students.png">
+                <p>Etudiant</p>
+            </a>
+            <a href="presence.html" ev
+                class="flex rounded-md gap-2 w-12 items-centre px-3 py-1.5  min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/Absence.png">
+                <p>Presence</p>
+            </a>
+            <a href="Historique.html"
+                class="flex rounded-md  gap-2 w-12 items-centre px-3 py-1.5 min-w-full bg-[#183862] hover:bg-sky-800">
+                <img class="size-5 invert brightness-0" src="Pictures/History.png">
+                <p>Historique</p>
+            </a>
+        </div>
+        <div class=" p-6 ">
+            <a href="#" class="flex gap-2 rounded-md  hover:bg-sky-800 p-2 ">
+                <img class="size-5 invert brightness-0" src="Pictures/logout.png" alt="">
+                <p id="dex" class="text-red-500">Deconnexion</p>
+            </a>
+        </div>
     </aside>
 
 
@@ -77,7 +68,8 @@
                 <input id="date" type="date" class=" bg-white invert border border-gray-600 rounded-md placeholder-gray-500 p-2 focus:ring-2 focus:ring-white focus:border-white dark:bg-white dark:text-black dark:border-gray-300 dark:placeholder-gray-500 w-80">
             </div>
             <div class=" flex flex-col gap-2 mt-3" id="infodisply">
-                
+
+
             </div>
 
 
@@ -99,7 +91,8 @@
 
         </div>
     </div>
-        <script src="presence.js"></script>
+        <script src="presence .js"></script>
+        <script src="scriptDashboard.js"></script>
 </body>
 
 </html>
